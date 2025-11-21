@@ -9,7 +9,7 @@ export function ScrollBasedVelocityDemo() {
   return (
     <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
       <ScrollVelocityContainer 
-        className="font-bold tracking-[-0.02em] uppercase" 
+        className="font-bold tracking-[-0.02em] uppercase text-primary" 
         style={{ fontSize: '800px', lineHeight: '0.85' }}
       >
         <ScrollVelocityRow baseVelocity={1} direction={1}>
