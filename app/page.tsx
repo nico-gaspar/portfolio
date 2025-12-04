@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MasonryGrid } from "@/components/masonry-grid";
 import { HeroSection } from "@/components/hero-section";
-import { PortfolioNavbar } from "@/components/portfolio-navbar";
 import { ThemeColors } from "@/components/theme-colors";
 import { ArrowRight } from "lucide-react";
 
@@ -62,20 +60,8 @@ const projects = [
 ];
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState("");
-
-  const filteredProjects = activeFilter
-    ? projects.filter((project) => project.category === activeFilter)
-    : projects;
-
   return (
     <main className="relative min-h-screen bg-white">
-      {/* Navbar with integrated filters */}
-      <PortfolioNavbar
-        activeFilter={activeFilter}
-        onFilterChange={setActiveFilter}
-      />
-
       {/* Theme Colors on the right */}
       <ThemeColors />
       
@@ -143,13 +129,11 @@ export default function Home() {
       {/* Projects Grid */}
       <section id="work" className="px-6 pb-32 pt-16 md:px-12 lg:px-24">
         <motion.div
-          key={activeFilter}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.4 }}
         >
-          <MasonryGrid projects={filteredProjects} />
+          <MasonryGrid projects={projects} />
         </motion.div>
       </section>
 
