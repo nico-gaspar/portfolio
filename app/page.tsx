@@ -2,62 +2,9 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { MasonryGrid } from "@/components/masonry-grid";
 import { HeroSection } from "@/components/hero-section";
 import { ThemeColors } from "@/components/theme-colors";
 import { ArrowRight } from "lucide-react";
-
-// Sample project data - replace with your actual projects
-const projects = [
-  {
-    id: 1,
-    title: "Building a brands strategy",
-    subtitle: "2024 // Company Name",
-    image: "/projects/project-1.jpg",
-    category: "case-studies",
-    height: "tall" as const, // for masonry layout
-  },
-  {
-    id: 2,
-    title: "Designing a user experience",
-    subtitle: "2024 // Project Title",
-    image: "/projects/project-2.jpg",
-    category: "case-studies",
-    height: "medium" as const,
-  },
-  {
-    id: 3,
-    title: "Launching a marketing campaign",
-    subtitle: "2024 // Initiative Name",
-    image: "/projects/project-3.jpg",
-    category: "case-studies",
-    height: "tall" as const,
-  },
-  {
-    id: 4,
-    title: "Product Design System",
-    subtitle: "2024 // Tech Company",
-    image: "/projects/project-4.jpg",
-    category: "timeline",
-    height: "medium" as const,
-  },
-  {
-    id: 5,
-    title: "Brand Identity Refresh",
-    subtitle: "2024 // Startup",
-    image: "/projects/project-5.jpg",
-    category: "timeline",
-    height: "short" as const,
-  },
-  {
-    id: 6,
-    title: "Mobile App Redesign",
-    subtitle: "2024 // E-commerce",
-    image: "/projects/project-6.jpg",
-    category: "flex-spot",
-    height: "tall" as const,
-  },
-];
 
 export default function Home() {
   return (
@@ -124,17 +71,6 @@ export default function Home() {
             </motion.div>
           </Link>
         </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section id="work" className="px-6 pb-32 pt-16 md:px-12 lg:px-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <MasonryGrid projects={projects} />
-        </motion.div>
       </section>
 
       {/* Contact Section */}
