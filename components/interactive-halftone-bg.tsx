@@ -45,7 +45,7 @@ export function InteractiveHalftoneBg({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [dots, setDots] = useState<Dot[]>([]);
   const mousePos = useRef({ x: -1000, y: -1000 });
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
 
   // Calculate luminosity from RGB
   const getLuminosity = (r: number, g: number, b: number): number => {
