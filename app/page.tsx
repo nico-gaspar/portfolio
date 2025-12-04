@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { MasonryGrid } from "@/components/masonry-grid";
 import { HeroSection } from "@/components/hero-section";
-import { FilterTabs } from "@/components/filter-tabs";
+import { PortfolioNavbar } from "@/components/portfolio-navbar";
+import { ThemeColors } from "@/components/theme-colors";
 
 // Sample project data - replace with your actual projects
 const projects = [
@@ -58,33 +59,29 @@ const projects = [
   },
 ];
 
-const filters = [
-  { id: "case-studies", label: "Case Studies" },
-  { id: "timeline", label: "Timeline" },
-  { id: "flex-spot", label: "Flex Spot" },
-];
-
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState("case-studies");
+  const [activeFilter, setActiveFilter] = useState("");
 
-  const filteredProjects = projects.filter(
-    (project) => project.category === activeFilter
-  );
+  const filteredProjects = activeFilter
+    ? projects.filter((project) => project.category === activeFilter)
+    : projects;
 
   return (
     <main className="relative min-h-screen bg-white">
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Filter Tabs */}
-      <FilterTabs
-        filters={filters}
+      {/* Navbar with integrated filters */}
+      <PortfolioNavbar
         activeFilter={activeFilter}
         onFilterChange={setActiveFilter}
       />
 
+      {/* Theme Colors on the right */}
+      <ThemeColors />
+      
+      {/* Hero Section */}
+      <HeroSection />
+
       {/* Projects Grid */}
-      <section className="px-6 pb-32 pt-16 md:px-12 lg:px-24">
+      <section id="work" className="px-6 pb-32 pt-16 md:px-12 lg:px-24">
         <motion.div
           key={activeFilter}
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +94,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="flex min-h-[50vh] items-center justify-center px-8 pb-32">
+      <section id="contact" className="flex min-h-[50vh] items-center justify-center px-8 pb-32">
         <div className="max-w-2xl space-y-8 text-center">
           <h2 className="text-4xl font-bold tracking-tight">Get In Touch</h2>
           <p className="text-xl text-gray-600">
