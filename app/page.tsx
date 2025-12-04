@@ -17,7 +17,7 @@ const projects = [
     subtitle: "2024 // Company Name",
     image: "/projects/project-1.jpg",
     category: "case-studies",
-    height: "tall", // for masonry layout
+    height: "tall" as const, // for masonry layout
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const projects = [
     subtitle: "2024 // Project Title",
     image: "/projects/project-2.jpg",
     category: "case-studies",
-    height: "medium",
+    height: "medium" as const,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projects = [
     subtitle: "2024 // Initiative Name",
     image: "/projects/project-3.jpg",
     category: "case-studies",
-    height: "tall",
+    height: "tall" as const,
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const projects = [
     subtitle: "2024 // Tech Company",
     image: "/projects/project-4.jpg",
     category: "timeline",
-    height: "medium",
+    height: "medium" as const,
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ const projects = [
     subtitle: "2024 // Startup",
     image: "/projects/project-5.jpg",
     category: "timeline",
-    height: "short",
+    height: "short" as const,
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const projects = [
     subtitle: "2024 // E-commerce",
     image: "/projects/project-6.jpg",
     category: "flex-spot",
-    height: "tall",
+    height: "tall" as const,
   },
 ];
 
